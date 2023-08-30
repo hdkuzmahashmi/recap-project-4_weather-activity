@@ -1,32 +1,23 @@
 import useLocalStorageState from "use-local-storage-state";
 import "./App.css";
 import Form from "./components/Form/Form";
-
+import List from "./components/List/List";
 function App() {
-  const [activity, setActivity] = useLocalStorageState("activity", {
-    defaultValue: "",
+  const [activities, setActivities] = useLocalStorageState("activities", {
+    defaultValue: [],
   });
-  const [isForGoodWeather, setIsForGoodWeather] = useLocalStorageState(
-    "is for good weather",
-    { defaultValue: false }
-  );
-
-  function handleIsForGoodWeather() {
-    setIsForGoodWeather(!isForGoodWeather);
-  }
 
   function handleAddActivity(data) {
-    setActivity(data.activity);
-    setIsForGoodWeather(data.selectWeather);
-    console.log(activity, isForGoodWeather);
+    console.log(data);
+    setActivities([...data, ...activities]);
+    console.log(activities);
   }
 
   return (
-    <Form
-      onAddActivity={handleAddActivity}
-      onChecked={handleIsForGoodWeather}
-    />
+    <>
+      <Form onAddActivity={handleAddActivity} />
+      <List activities={activities} />
+    </>
   );
 }
-
 export default App;
