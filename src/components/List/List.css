@@ -1,0 +1,18 @@
+.weather__wrapper {
+  background-color: rgba(255, 255, 255, 0.723);
+  padding: 3rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+.weather__list {
+  list-style-type: none;
+  margin-top: 1rem;
+  width: 100%;
+}
+.current__weather {
+  color: #bb2525;
+}

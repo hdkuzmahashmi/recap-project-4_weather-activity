@@ -1,5 +1,5 @@
-import "./Form.css";
 import { nanoid } from "nanoid";
+import "./Form.css";
 export default function Form({ onAddActivity }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -15,8 +15,8 @@ export default function Form({ onAddActivity }) {
     event.target.activity.focus();
   }
   return (
-    <main>
-      <h1>Weather & Activities App</h1>
+    <>
+      <h1 className="headline">Weather Activities App</h1>
       <form onSubmit={handleSubmit} className="form">
         <label htmlFor="activity">Your activity:</label>
         <input type="text" name="activity" />
@@ -26,6 +26,6 @@ export default function Form({ onAddActivity }) {
         </div>
         <button className="form__submit-button">Submit</button>
       </form>
-    </main>
+    </>
   );
 }

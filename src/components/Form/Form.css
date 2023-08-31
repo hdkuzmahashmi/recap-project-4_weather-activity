@@ -1,13 +1,24 @@
+.headline {
+  margin-top: 5rem;
+  color: white;
+}
+
 .form {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  margin-top: 1rem;
+  background-color: rgba(255, 255, 255, 0.771);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 35%;
 }
 
 .form__checkbox-wrapper {
   display: flex;
   align-items: center;
   margin-top: 0.5rem;
+  gap: 1rem;
 }
 
 .form__submit-button {
@@ -16,4 +27,11 @@
   border: none;
   height: 2rem;
   border-radius: 10px;
+  margin-bottom: 3rem;
+  background-color: #96b6c5;
+  font-weight: bold;
+}
+
+.form__submit-button:hover {
+  background-color: #adc4ce;
 }

@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import "./App.css";
 import Form from "./components/Form/Form";
 import List from "./components/List/List";
-import { useState, useEffect } from "react";
 
 function App() {
   const [activities, setActivities] = useLocalStorageState("activities", {
@@ -44,10 +44,27 @@ function App() {
     setActivities(newActivities);
   }
 
+  const sunnyStyle = {
+    background: "url(./sunny.jpg)",
+    backgroundSize: "contain",
+  };
+
   return (
-    <>
+    <main
+      style={
+        weather.isGoodWeather === true
+          ? {
+              background: "url(./sunny.jpg)",
+              backgroundSize: "auto 100%",
+            }
+          : {
+              background: "url(./rainy.jpg)",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }
+      }>
       <Form onAddActivity={handleAddActivity} />
-      <h2>
+      <h2 className="weather__headline">
         {weather.temperature} {weather.condition}
       </h2>
       <List
@@ -55,7 +72,7 @@ function App() {
         headline={weather.isGoodWeather ? "Good" : "Bad"}
         onDeleteActivity={handelDeleteActivity}
       />
-    </>
+    </main>
   );
 }
 export default App;

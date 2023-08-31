@@ -1,0 +1,13 @@
+.weather__headline {
+  background-color: white;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  outline: 5px solid lightblue;
+  margin-bottom: 1rem;
+  color: black;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.3rem;
+}

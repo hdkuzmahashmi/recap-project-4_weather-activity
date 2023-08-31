@@ -1,10 +1,13 @@
 import Activity from "../Activity/Activity";
+import "./List.css";
 
 export default function List({ activities, headline, onDeleteActivity }) {
   return (
-    <>
-      <h3>Weather : {headline}</h3>
-      <ul>
+    <div className="weather__wrapper">
+      <h3>
+        Current Weather: <span className="current__weather">{headline}</span>
+      </h3>
+      <ul className="weather__list">
         {activities.map((activity) => (
           <Activity
             activity={activity.activity}
@@ -15,6 +18,6 @@ export default function List({ activities, headline, onDeleteActivity }) {
           />
         ))}
       </ul>
-    </>
+    </div>
   );
 }
