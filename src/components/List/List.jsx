@@ -1,21 +1,20 @@
-import { nanoid } from "nanoid";
 import Activity from "../Activity/Activity";
 
-export default function List({ activities }) {
-  function testac() {
-    console.log("List com", activities);
-  }
-  testac();
-
+export default function List({ activities, headline, onDeleteActivity }) {
   return (
-    <ul>
-      {activities.map((activity) => (
-        <Activity
-          activity={activity.activity}
-          isForGoodWeather={activity.isForGoodWeather}
-          key={nanoid()}
-        />
-      ))}
-    </ul>
+    <>
+      <h3>Weather : {headline}</h3>
+      <ul>
+        {activities.map((activity) => (
+          <Activity
+            activity={activity.activity}
+            isForGoodWeather={activity.isForGoodWeather}
+            id={activity.id}
+            onDeleteActivity={onDeleteActivity}
+            key={activity.id}
+          />
+        ))}
+      </ul>
+    </>
   );
 }

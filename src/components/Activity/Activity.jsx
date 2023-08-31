@@ -1,13 +1,21 @@
-export default function Activity({ activity, isForGoodWeather, id }) {
-  function test() {
-    console.log("activity com", activity);
-    console.log("activity com", isForGoodWeather);
-    console.log("activity com", id);
-  }
-  test();
+import { ReactComponent as Trash } from "./trash.svg";
+export default function Activity({
+  activity,
+  isForGoodWeather,
+  id,
+  onDeleteActivity,
+}) {
   return (
-    <li key={id}>
-      {activity} {""} {isForGoodWeather ? <span>Good</span> : <span>Bad</span>}
+    <li>
+      {activity} {""} {isForGoodWeather ? <span>Good</span> : <span>Bad</span>}{" "}
+      <button
+        type="button"
+        onClick={() => {
+          onDeleteActivity(id);
+        }}
+      >
+        <Trash />
+      </button>
     </li>
   );
 }

@@ -1,11 +1,11 @@
 import "./Form.css";
+import { nanoid } from "nanoid";
 export default function Form({ onAddActivity }) {
   function handleSubmit(event) {
     event.preventDefault();
-    //const formData = new FormData(event.target);
-    //const data = Object.fromEntries(formData);
     const fromdataObj = [
       {
+        id: nanoid(),
         activity: event.target.activity.value,
         isForGoodWeather: event.target.selectWeather.checked,
       },
