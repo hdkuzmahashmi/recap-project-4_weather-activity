@@ -31,7 +31,9 @@ function App() {
         console.error();
       }
     }
-    weatherApi();
+    //weatherApi();
+    const interval = setInterval(weatherApi, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   function handelDeleteActivity(id) {
