@@ -31,7 +31,7 @@ function App() {
         console.error();
       }
     }
-    //weatherApi();
+
     const interval = setInterval(weatherApi, 5000);
     return () => clearInterval(interval);
   }, []);
